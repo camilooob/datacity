@@ -1,10 +1,14 @@
 from sqlalchemy import create_engine
 from sqlalchemy import URL
+from get_pass import mysql_login
+
+username1p, password1p = mysql_login()
+
 
 url_object = URL.create(
-	"mysql",
-	username="opeencamilo",
-	password="QHb-MfJjFQea3XBUo3NTf*We4",  # plain (unescaped) text
+	"mysql+pymysql",
+	username=username1p,
+	password=password1p,  # plain (unescaped) text
 	host="localhost",
 	database="cityopeen",
 	port="3308"
