@@ -8,12 +8,11 @@ username1p, password1p = mysql_login()
 url_object = URL.create(
 	"mysql+pymysql",
 	username=username1p,
-	password=password1p,  # plain (unescaped) text
-	host="localhost",
+	password=password1p,
+	host="docker.for.mac.host.internal",
 	database="cityopeen",
 	port="3308"
 )
-
 # Create the engine
 engine = create_engine(url_object)
 
