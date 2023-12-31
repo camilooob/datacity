@@ -1,25 +1,28 @@
-from sqlalchemy import create_engine
-from sqlalchemy import URL
-from get_pass import mysql_login
+from get_db import execute_query
 
-username1p, password1p = mysql_login()
+# Querys generados por datagrip.
+update_ubicacion_people_1 = "UPDATE cityopeen.people SET y = 6 WHERE idp = 2"
+update_ubicacion_people_2 = "UPDATE cityopeen.people SET y = 6 WHERE idp = 1"
+update_query_map_1 = "UPDATE cityopeen.layer_map SET `9` = '=R1O2' WHERE id = 6"
+update_query_map_2 = "UPDATE cityopeen.layer_map SET `9` = 'V' WHERE id = 4"
+update_query_map_3 = "UPDATE cityopeen.layer_map SET `9` = 'V' WHERE id = 5"
+update_query_object_1 = "UPDATE cityopeen.objects SET y = 6 WHERE ido = 1"
+
+# Ejecutando querys
+
+r = execute_query(update_ubicacion_people_1)
+execute_query(update_ubicacion_people_2)
+execute_query(update_query_map_1)
+execute_query(update_query_map_2)
+execute_query(update_query_map_3)
+execute_query(update_query_object_1)
+
+print(r)
+print("Querys ejecutados correctamente")
 
 
-url_object = URL.create(
-	"mysql+pymysql",
-	username=username1p,
-	password=password1p,
-	host="docker.for.mac.host.internal",
-	database="cityopeen",
-	port="3308"
-)
-# Create the engine
-engine = create_engine(url_object)
 
-# Test the connection
-try:
-	connection = engine.connect()
-	print("Connected to MySQL database successfully!")
-	connection.close()
-except Exception as e:
-	print("Error connecting to MySQL database:", str(e))
+
+
+
+
