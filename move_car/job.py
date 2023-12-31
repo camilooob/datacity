@@ -1,6 +1,7 @@
 from get_db import execute_query
 
 # Querys
+
 update_ubicacion_people_1 = "UPDATE cityopeen.people SET y = 6 WHERE idp = 2"
 update_ubicacion_people_2 = "UPDATE cityopeen.people SET y = 6 WHERE idp = 1"
 update_query_map_1 = "UPDATE cityopeen.layer_map SET `9` = '=R1O2' WHERE id = 6"
