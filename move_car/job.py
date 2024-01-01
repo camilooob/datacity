@@ -101,6 +101,7 @@ if owner_id > 0:
     update_query_map_3 = "UPDATE cityopeen.layer_map SET x{} = 'V' WHERE y = {}".format(cx, cy)
     update_query_object_1 = "UPDATE cityopeen.objects SET y = {}, x = {} WHERE idp = {}  and type = 'car'".format(y_new, x_new, owner_id)
 
+
     query_list = [update_ubicacion_people_1, update_ubicacion_people_2, update_query_map_1, update_query_map_2, update_query_map_3, update_query_object_1]
     for query in query_list:
         #execute_query(query)
