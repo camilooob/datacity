@@ -50,5 +50,15 @@ def execute_query(query):
         conn.execute(text(query))
         conn.commit()
 
+def select_query(query):
+# write the SQL query inside the
+# text() block to fetch all records
+    sql = text(query)
+
+    # Fetch all the records
+    result = engine.connect().execute(sql).fetchall()
+
+    return result
+
 
 
